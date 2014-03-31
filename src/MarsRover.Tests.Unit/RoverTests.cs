@@ -20,8 +20,8 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(0, 0, Orientation.N);
 
-			_rover.Position.X.Should().Be(0);
-			_rover.Position.Y.Should().Be(0);
+			_rover.X.Should().Be(0);
+			_rover.Y.Should().Be(0);
 		}
 
 		[Test]
@@ -32,8 +32,8 @@ namespace MarsRover.Tests.Unit
 		
 			_rover.Land(landingX, landingY, Orientation.N);
 
-			_rover.Position.X.Should().Be(1);
-			_rover.Position.Y.Should().Be(1);
+			_rover.X.Should().Be(1);
+			_rover.Y.Should().Be(1);
 		}
 
 		[Test]
@@ -52,6 +52,16 @@ namespace MarsRover.Tests.Unit
 			_rover.Land(0, 0, orientation);
 
 			_rover.Orientation.Should().Be(orientation);
+		}
+
+		[Test]
+		public void RoverMovesForwardByOneCell()
+		{
+			_rover.Land(0, 0, Orientation.N);
+
+			_rover.Forward();
+
+			_rover.Y.Should().Be(1);
 		}
 	}
 }
