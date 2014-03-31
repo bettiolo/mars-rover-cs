@@ -19,7 +19,7 @@ namespace MarsRover.Tests.Unit
 			var planet = new Planet();
 			var rover = new Rover(planet);
 
-			rover.Land(0, 0);
+			rover.Land(0, 0, Orientation.N);
 
 			rover.Position.X.Should().Be(0);
 			rover.Position.Y.Should().Be(0);
@@ -33,10 +33,21 @@ namespace MarsRover.Tests.Unit
 			var landingX = 1;
 			var landingY = 1;
 		
-			rover.Land(landingX, landingY);
+			rover.Land(landingX, landingY, Orientation.N);
 
 			rover.Position.X.Should().Be(1);
 			rover.Position.Y.Should().Be(1);
+		}
+
+		[Test]
+		public void RoverLandsWithSpecificOrientation()
+		{
+			var planet = new Planet();
+			var rover = new Rover(planet);
+
+			rover.Land(0, 0, Orientation.N);
+
+			rover.Orientation.Should().Be(Orientation.N);
 		}
 	}
 }

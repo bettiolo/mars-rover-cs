@@ -1,7 +1,7 @@
 ﻿namespace MarsRover
 {
-	public class Planet
+	public enum Orientation
 	{
-
+		N
 	}
 }
