@@ -55,12 +55,24 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverMovesForwardByOneCell()
+		public void RoverMovesUpByOneCellIfOrientationIsNorth()
 		{
 			_rover.Land(0, 0, Orientation.N);
 
 			_rover.Forward();
 
+			_rover.X.Should().Be(0);
+			_rover.Y.Should().Be(1);
+		}
+
+		[Test]
+		public void RoverMovesRightByOneCellIfOrientationIsEast()
+		{
+			_rover.Land(1, 1, Orientation.E);
+
+			_rover.Forward();
+
+			_rover.X.Should().Be(2);
 			_rover.Y.Should().Be(1);
 		}
 	}

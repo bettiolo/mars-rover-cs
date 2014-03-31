@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace MarsRover
@@ -18,7 +19,15 @@ namespace MarsRover
 
 		public void Forward()
 		{
-			Y += 1;
+			switch (Orientation)
+			{
+				case Orientation.N:
+					Y += 1;
+					break;
+				case Orientation.E:
+					X += 1;
+					break;
+			}
 		}
 	}
 }
