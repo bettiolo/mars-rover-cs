@@ -38,13 +38,25 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverLandsWithSpecificOrientation()
+		public void RoverLandsWithNorthOrientation()
 		{
 			var rover = new Rover();
 
 			rover.Land(0, 0, Orientation.N);
 
 			rover.Orientation.Should().Be(Orientation.N);
+		}
+
+		[TestCase(Orientation.E)]
+		[TestCase(Orientation.S)]
+		[TestCase(Orientation.W)]
+		public void RoverLandsWithDifferentOrientations(Orientation orientation)
+		{
+			var rover = new Rover();
+
+			rover.Land(0, 0, orientation);
+
+			rover.Orientation.Should().Be(orientation);
 		}
 	}
 }
