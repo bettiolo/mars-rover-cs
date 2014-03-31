@@ -16,8 +16,7 @@ namespace MarsRover.Tests.Unit
 		[Test]
 		public void RoverLandsOnPlanetWithDefaultPosition()
 		{
-			var planet = new Planet();
-			var rover = new Rover(planet);
+			var rover = new Rover();
 
 			rover.Land(0, 0, Orientation.N);
 
@@ -28,8 +27,7 @@ namespace MarsRover.Tests.Unit
 		[Test]
 		public void RoverLandsOnSpecificPosition()
 		{
-			var planet = new Planet();
-			var rover = new Rover(planet);
+			var rover = new Rover();
 			var landingX = 1;
 			var landingY = 1;
 		
@@ -42,8 +40,7 @@ namespace MarsRover.Tests.Unit
 		[Test]
 		public void RoverLandsWithSpecificOrientation()
 		{
-			var planet = new Planet();
-			var rover = new Rover(planet);
+			var rover = new Rover();
 
 			rover.Land(0, 0, Orientation.N);
 
