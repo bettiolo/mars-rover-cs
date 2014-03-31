@@ -27,6 +27,12 @@ namespace MarsRover
 				case Orientation.E:
 					X += 1;
 					break;
+				case Orientation.S:
+					Y -= 1;
+					break;
+				case Orientation.W:
+					X -= 1;
+					break;
 			}
 		}
 	}
