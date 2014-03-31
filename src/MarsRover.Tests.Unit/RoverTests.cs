@@ -16,7 +16,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverLandsOnPlanetWithDefaultPosition()
+		public void LandsOnPlanetWithDefaultPosition()
 		{
 			_rover.Land(0, 0, Orientation.N);
 
@@ -25,7 +25,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverLandsOnSpecificPosition()
+		public void LandsOnSpecificPosition()
 		{	
 			var landingX = 1;
 			var landingY = 1;
@@ -37,7 +37,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverLandsWithNorthOrientation()
+		public void LandsWithNorthOrientation()
 		{
 			_rover.Land(0, 0, Orientation.N);
 
@@ -47,7 +47,7 @@ namespace MarsRover.Tests.Unit
 		[TestCase(Orientation.E)]
 		[TestCase(Orientation.S)]
 		[TestCase(Orientation.W)]
-		public void RoverLandsWithDifferentOrientations(Orientation orientation)
+		public void LandsWithDifferentOrientations(Orientation orientation)
 		{
 			_rover.Land(0, 0, orientation);
 
@@ -55,7 +55,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverMovesUpByOneCellIfOrientationIsNorth()
+		public void MovesForwardNorthByOneCellIfOrientationIsNorth()
 		{
 			_rover.Land(0, 0, Orientation.N);
 
@@ -66,7 +66,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void RoverMovesRightByOneCellIfOrientationIsEast()
+		public void MovesForwardEastByOneCellIfOrientationIsEast()
 		{
 			_rover.Land(1, 1, Orientation.E);
 
