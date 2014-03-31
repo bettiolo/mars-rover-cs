@@ -2,10 +2,8 @@
 
 namespace MarsRover
 {
-
 	public class Rover
 	{
-
 		private readonly Planet _planet;
 
 		public Rover(Planet planet)
@@ -13,13 +11,11 @@ namespace MarsRover
 			_planet = planet;
 		}
 
-		public Point Position { get; set; }
+		public Point Position { get; private set; }
 
-		public void Land()
+		public void Land(int x, int y)
 		{
-			
+			Position = new Point(x, y);
 		}
-
 	}
-
 }
