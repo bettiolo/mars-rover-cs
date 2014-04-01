@@ -31,5 +31,16 @@
 					break;
 			}
 		}
+
+		public void Backwards()
+		{
+			switch (Orientation)
+			{
+				case Orientation.N:
+					Y -= 1;
+					break;
+			}
+		}
+
 	}
 }
