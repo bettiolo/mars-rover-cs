@@ -168,5 +168,15 @@ namespace MarsRover.Tests.Unit
 
 			_rover.Orientation.Should().Be(orientation);
 		}
+
+		[Test]
+		public void HeadsEastAfterRotatingRightFromNorthOrientation()
+		{
+			_rover.Land(0, 0, Orientation.N);
+
+			_rover.RotateRight();
+
+			_rover.Orientation.Should().Be(Orientation.E);
+		}
 	}
 }

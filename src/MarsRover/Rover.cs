@@ -50,5 +50,11 @@
 					break;
 			}
 		}
+
+		public void RotateRight()
+		{
+			Orientation = Orientation.E;
+		}
+
 	}
 }
