@@ -77,6 +77,15 @@
 				case Orientation.N:
 					Orientation = Orientation.W;
 					break;
+				case Orientation.E:
+ 					Orientation = Orientation.N;
+					break;
+				case Orientation.S:
+					Orientation = Orientation.E;
+					break;
+				case Orientation.W:
+					Orientation = Orientation.S;
+					break;
 			}
 		}
 

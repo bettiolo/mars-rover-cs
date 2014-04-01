@@ -174,6 +174,9 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[TestCase(Orientation.N, Orientation.W)]
+		[TestCase(Orientation.E, Orientation.N)]
+		[TestCase(Orientation.S, Orientation.E)]
+		[TestCase(Orientation.W, Orientation.S)]
 		public void FacesCorrectOrientationAfterRotatingLeft(Orientation startingOrientation, Orientation expectedOrientation)
 		{
 			_rover.Land(0, 0, startingOrientation);
