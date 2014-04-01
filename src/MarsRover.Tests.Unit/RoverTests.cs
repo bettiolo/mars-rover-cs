@@ -185,5 +185,16 @@ namespace MarsRover.Tests.Unit
 
 			_rover.Orientation.Should().Be(expectedOrientation);
 		}
+
+		[Test]
+		public void DoesNotMoveWhenRotatingRight()
+		{
+			_rover.Land(3, 3, Orientation.N);
+
+			_rover.RotateRight();
+
+			_rover.X.Should().Be(3);
+			_rover.Y.Should().Be(3);
+		}
 	}
 }
