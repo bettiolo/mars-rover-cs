@@ -70,5 +70,15 @@
 			}
 		}
 
+		public void RotateLeft()
+		{
+			switch (Orientation)
+			{
+				case Orientation.N:
+					Orientation = Orientation.W;
+					break;
+			}
+		}
+
 	}
 }

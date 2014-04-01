@@ -175,5 +175,15 @@ namespace MarsRover.Tests.Unit
 
 			_rover.Orientation.Should().Be(expectedOrientation);
 		}
+
+		[TestCase(Orientation.N, Orientation.W)]
+		public void FacesCorrectOrientationAfterRotatingLeft(Orientation startingOrientation, Orientation expectedOrientation)
+		{
+			_rover.Land(0, 0, startingOrientation);
+
+			_rover.RotateLeft();
+
+			_rover.Orientation.Should().Be(expectedOrientation);
+		}
 	}
 }
