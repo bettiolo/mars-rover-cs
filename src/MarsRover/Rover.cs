@@ -53,41 +53,26 @@
 
 		public void RotateRight()
 		{
-			switch (Orientation)
-			{
-				case Orientation.N:
-					Orientation = Orientation.E;
-					break;
-				case Orientation.E:
-					Orientation = Orientation.S;
-					break;
-				case Orientation.S:
-					Orientation = Orientation.W;
-					break;
-				case Orientation.W:
-					Orientation = Orientation.N;
-					break;
-			}
+			Rotate(90);
 		}
 
 		public void RotateLeft()
 		{
-			switch (Orientation)
-			{
-				case Orientation.N:
-					Orientation = Orientation.W;
-					break;
-				case Orientation.E:
- 					Orientation = Orientation.N;
-					break;
-				case Orientation.S:
-					Orientation = Orientation.E;
-					break;
-				case Orientation.W:
-					Orientation = Orientation.S;
-					break;
-			}
+			Rotate(-90);
 		}
 
+		private void Rotate(int degrees)
+		{
+			var newOrientation = ((int) Orientation) + degrees;
+			if (newOrientation >= 360)
+			{
+				newOrientation -= 360;
+			}
+			if (newOrientation < 0)
+			{
+				newOrientation += 360;
+			}
+			Orientation = (Orientation) newOrientation;
+		}
 	}
 }
