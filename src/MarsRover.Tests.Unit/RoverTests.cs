@@ -134,7 +134,6 @@ namespace MarsRover.Tests.Unit
 			_rover.Y.Should().Be(1);
 		}
 
-		[Test]
 		[TestCase(Orientation.N)]
 		[TestCase(Orientation.E)]
 		[TestCase(Orientation.S)]
@@ -148,7 +147,6 @@ namespace MarsRover.Tests.Unit
 			_rover.Orientation.Should().Be(orientation);
 		}
 
-		[Test]
 		[TestCase(Orientation.N)]
 		[TestCase(Orientation.E)]
 		[TestCase(Orientation.S)]
@@ -162,7 +160,6 @@ namespace MarsRover.Tests.Unit
 			_rover.Orientation.Should().Be(orientation);
 		}
 
-		[Test]
 		[TestCase(Orientation.N, Orientation.E)]
 		[TestCase(Orientation.E, Orientation.S)]
 		[TestCase(Orientation.S, Orientation.W)]
