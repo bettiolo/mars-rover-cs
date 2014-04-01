@@ -6,7 +6,6 @@ namespace MarsRover.Tests.Unit
 	[TestFixture]
 	public class RoverTests
 	{
-
 		private Rover _rover;
 
 		[SetUp]
