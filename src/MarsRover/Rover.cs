@@ -13,7 +13,7 @@
 			Orientation = orientation;
 		}
 
-		public void Forward()
+		public void MoveForward()
 		{
 			switch (Orientation)
 			{
@@ -32,7 +32,7 @@
 			}
 		}
 
-		public void Backwards()
+		public void MoveBackward()
 		{
 			switch (Orientation)
 			{

@@ -51,7 +51,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(0, 0, Orientation.N);
 
-			_rover.Forward();
+			_rover.MoveForward();
 
 			_rover.X.Should().Be(0);
 			_rover.Y.Should().Be(1);
@@ -62,7 +62,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(1, 1, Orientation.E);
 
-			_rover.Forward();
+			_rover.MoveForward();
 
 			_rover.X.Should().Be(2);
 			_rover.Y.Should().Be(1);
@@ -73,7 +73,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(2, 2, Orientation.S);
 
-			_rover.Forward();
+			_rover.MoveForward();
 
 			_rover.X.Should().Be(2);
 			_rover.Y.Should().Be(1);
@@ -84,7 +84,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(3, 3, Orientation.W);
 
-			_rover.Forward();
+			_rover.MoveForward();
 
 			_rover.X.Should().Be(2);
 			_rover.Y.Should().Be(3);
@@ -95,7 +95,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(1,1, Orientation.N);
 
-			_rover.Backwards();
+			_rover.MoveBackward();
 
 			_rover.X.Should().Be(1);
 			_rover.Y.Should().Be(0);
@@ -106,7 +106,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(1, 1, Orientation.E);
 
-			_rover.Backwards();
+			_rover.MoveBackward();
 
 			_rover.X.Should().Be(0);
 			_rover.Y.Should().Be(1);
@@ -117,7 +117,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(1, 1, Orientation.S);
 
-			_rover.Backwards();
+			_rover.MoveBackward();
 
 			_rover.X.Should().Be(1);
 			_rover.Y.Should().Be(2);
@@ -128,7 +128,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(1, 1, Orientation.W);
 
-			_rover.Backwards();
+			_rover.MoveBackward();
 
 			_rover.X.Should().Be(2);
 			_rover.Y.Should().Be(1);
@@ -142,7 +142,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(0, 0, orientation);
 
-			_rover.Forward();
+			_rover.MoveForward();
 
 			_rover.Orientation.Should().Be(orientation);
 		}
@@ -155,7 +155,7 @@ namespace MarsRover.Tests.Unit
 		{
 			_rover.Land(0, 0, orientation);
 
-			_rover.Backwards();
+			_rover.MoveBackward();
 
 			_rover.Orientation.Should().Be(orientation);
 		}
