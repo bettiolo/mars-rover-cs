@@ -53,7 +53,15 @@
 
 		public void RotateRight()
 		{
-			Orientation = Orientation.E;
+			switch (Orientation)
+			{
+				case Orientation.N:
+					Orientation = Orientation.E;
+					break;
+				case Orientation.E:
+					Orientation = Orientation.S;
+					break;
+			}
 		}
 
 	}
