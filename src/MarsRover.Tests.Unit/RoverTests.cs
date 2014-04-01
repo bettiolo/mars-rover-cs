@@ -35,14 +35,7 @@ namespace MarsRover.Tests.Unit
 			_rover.Y.Should().Be(1);
 		}
 
-		[Test]
-		public void LandsWithNorthOrientation()
-		{
-			_rover.Land(0, 0, Orientation.N);
-
-			_rover.Orientation.Should().Be(Orientation.N);
-		}
-
+		[TestCase(Orientation.N)]
 		[TestCase(Orientation.E)]
 		[TestCase(Orientation.S)]
 		[TestCase(Orientation.W)]
@@ -170,43 +163,17 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void FacesEastAfterRotatingRightFromNorthOrientation()
+		[TestCase(Orientation.N, Orientation.E)]
+		[TestCase(Orientation.E, Orientation.S)]
+		[TestCase(Orientation.S, Orientation.W)]
+		[TestCase(Orientation.W, Orientation.N)]
+		public void FacesCorrectOrientationAfterRotatingRight(Orientation startingOrientation, Orientation expectedOrientation)
 		{
-			_rover.Land(0, 0, Orientation.N);
+			_rover.Land(0, 0, startingOrientation);
 
 			_rover.RotateRight();
 
-			_rover.Orientation.Should().Be(Orientation.E);
-		}
-
-		[Test]
-		public void FacesSouthAfterRotatingRightFromEastOrientation()
-		{
-			_rover.Land(0, 0, Orientation.E);
-
-			_rover.RotateRight();
-
-			_rover.Orientation.Should().Be(Orientation.S);
-		}
-
-		[Test]
-		public void FacesWestAfterRotatingRightFromSouthOrientation()
-		{
-			_rover.Land(0, 0, Orientation.S);
-
-			_rover.RotateRight();
-
-			_rover.Orientation.Should().Be(Orientation.W);
-		}
-
-		[Test]
-		public void FacesNorthAfterRotatingRightFromWestOrientation()
-		{
-			_rover.Land(0, 0, Orientation.W);
-
-			_rover.RotateRight();
-
-			_rover.Orientation.Should().Be(Orientation.N);
+			_rover.Orientation.Should().Be(expectedOrientation);
 		}
 	}
 }
