@@ -196,5 +196,16 @@ namespace MarsRover.Tests.Unit
 			_rover.X.Should().Be(3);
 			_rover.Y.Should().Be(3);
 		}
+
+		[Test]
+		public void DoesNotMoveWhenRotatingLeft()
+		{
+			_rover.Land(2, 2, Orientation.S);
+
+			_rover.RotateLeft();
+
+			_rover.X.Should().Be(2);
+			_rover.Y.Should().Be(2);
+		}
 	}
 }
