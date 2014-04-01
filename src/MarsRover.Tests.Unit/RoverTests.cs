@@ -141,5 +141,18 @@ namespace MarsRover.Tests.Unit
 			_rover.Y.Should().Be(1);
 		}
 
+		[Test]
+		[TestCase(Orientation.N)]
+		[TestCase(Orientation.E)]
+		[TestCase(Orientation.S)]
+		[TestCase(Orientation.W)]
+		public void MaintainsOrientationWhenMovingForward(Orientation orientation)
+		{
+			_rover.Land(0, 0, orientation);
+
+			_rover.Forward();
+
+			_rover.Orientation.Should().Be(orientation);
+		}
 	}
 }
