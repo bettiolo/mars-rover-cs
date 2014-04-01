@@ -170,7 +170,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void HeadsEastAfterRotatingRightFromNorthOrientation()
+		public void FacesEastAfterRotatingRightFromNorthOrientation()
 		{
 			_rover.Land(0, 0, Orientation.N);
 
@@ -180,7 +180,7 @@ namespace MarsRover.Tests.Unit
 		}
 
 		[Test]
-		public void HeadsSouthAfterRotatingRightFromEastOrientation()
+		public void FacesSouthAfterRotatingRightFromEastOrientation()
 		{
 			_rover.Land(0, 0, Orientation.E);
 
