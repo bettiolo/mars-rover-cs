@@ -107,5 +107,39 @@ namespace MarsRover.Tests.Unit
 			_rover.X.Should().Be(1);
 			_rover.Y.Should().Be(0);
 		}
+
+		[Test]
+		public void MovesBackwardsWestByOneCellIfOrientationIsEast()
+		{
+			_rover.Land(1, 1, Orientation.E);
+
+			_rover.Backwards();
+
+			_rover.X.Should().Be(0);
+			_rover.Y.Should().Be(1);
+		}
+
+		[Test]
+		public void MovesBackwardsNorthByOneCellIfOrientationIsSouth()
+		{
+			_rover.Land(1, 1, Orientation.S);
+
+			_rover.Backwards();
+
+			_rover.X.Should().Be(1);
+			_rover.Y.Should().Be(2);
+		}
+
+		[Test]
+		public void MovesBackwardsEastByOneCellIfOrientationIsWest()
+		{
+			_rover.Land(1, 1, Orientation.W);
+
+			_rover.Backwards();
+
+			_rover.X.Should().Be(2);
+			_rover.Y.Should().Be(1);
+		}
+
 	}
 }
